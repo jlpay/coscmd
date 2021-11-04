@@ -79,7 +79,7 @@ class CoscmdConfig(object):
                     path=to_unicode(path)
                 )
             else:
-                url = u"{schema}://{bucket}.cos.{region}.myqcloud.com/{path}".format(
+                url = u"{schema}://{bucket}.cos.{region}.cos.yun.unionpay.com/{path}".format(
                     schema=self._schema,
                     bucket=self._bucket,
                     region=self._region,
@@ -93,7 +93,7 @@ class CoscmdConfig(object):
                     endpoint=self._endpoint
                 )
             else:
-                url = u"{schema}://{bucket}.cos.{region}.myqcloud.com/".format(
+                url = u"{schema}://{bucket}.cos.{region}.cos.yun.unionpay.com/".format(
                     schema=self._schema,
                     bucket=self._bucket,
                     region=self._region
@@ -683,7 +683,7 @@ class Interface(object):
                 copy_source['Key'] = source_key
                 copy_source['RawPath'] = copy_source['Bucket'] + ".cos." + \
                     copy_source['Region'] + \
-                    ".myqcloud.com/" + copy_source['Key']
+                    ".cos.yun.unionpay.com/" + copy_source['Key']
                 sdk_config_source = qcloud_cos.CosConfig(Region=copy_source['Region'],
                                                          SecretId=self._conf._secret_id,
                                                          SecretKey=self._conf._secret_key,
